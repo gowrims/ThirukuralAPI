@@ -160,6 +160,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\அதிகாரம்.cs" />
+    <Compile Include="Models\இயல்.cs" />
+    <Compile Include="Models\குறள்கள்.cs" />
+    <Compile Include="Models\திருக்குறள்.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +202,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="ThirukuralA2Z\chapters.txt" />
+    <Content Include="ThirukuralA2Z\Iyal.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -212,10 +218,22 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="ThirukuralA2Z\Thirukural\1" />
+    <Content Include="ThirukuralA2Z\Thirukural\10" />
+    <Content Include="ThirukuralA2Z\Thirukural\11" />
+    <Content Include="ThirukuralA2Z\Thirukural\12" />
+    <Content Include="ThirukuralA2Z\Thirukural\13" />
+    <Content Include="ThirukuralA2Z\Thirukural\2" />
+    <Content Include="ThirukuralA2Z\Thirukural\3" />
+    <Content Include="ThirukuralA2Z\Thirukural\4" />
+    <Content Include="ThirukuralA2Z\Thirukural\5" />
+    <Content Include="ThirukuralA2Z\Thirukural\6" />
+    <Content Include="ThirukuralA2Z\Thirukural\7" />
+    <Content Include="ThirukuralA2Z\Thirukural\8" />
+    <Content Include="ThirukuralA2Z\Thirukural\9" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

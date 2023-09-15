@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using ThirukuralAPI.Models;
 
 namespace ThirukuralAPI.Controllers
 {
@@ -12,7 +9,7 @@ namespace ThirukuralAPI.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            yield return இயல்.இயல்கள்();
         }
 
         // GET api/values/5
