@@ -12,9 +12,14 @@ namespace ThirukuralAPI.Controllers
             return இயல்.இயல்கள்();
         }
 
-        public string Get(int id)
+        public HttpResponseMessage GetAthikaram()
         {
-            return "value";
+            return அதிகாரம்.அதிகாரங்கள்();
+        }
+
+        public HttpResponseMessage GetAthikaram()
+        {
+            return அதிகாரம்.அதிகாரங்கள்();
         }
 
         public void Post([FromBody] string value)
