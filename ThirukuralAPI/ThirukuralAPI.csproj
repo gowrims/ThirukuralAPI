@@ -218,19 +218,19 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="ThirukuralA2Z\Thirukural\1" />
-    <Content Include="ThirukuralA2Z\Thirukural\10" />
-    <Content Include="ThirukuralA2Z\Thirukural\11" />
-    <Content Include="ThirukuralA2Z\Thirukural\12" />
-    <Content Include="ThirukuralA2Z\Thirukural\13" />
-    <Content Include="ThirukuralA2Z\Thirukural\2" />
-    <Content Include="ThirukuralA2Z\Thirukural\3" />
-    <Content Include="ThirukuralA2Z\Thirukural\4" />
-    <Content Include="ThirukuralA2Z\Thirukural\5" />
-    <Content Include="ThirukuralA2Z\Thirukural\6" />
-    <Content Include="ThirukuralA2Z\Thirukural\7" />
-    <Content Include="ThirukuralA2Z\Thirukural\8" />
-    <Content Include="ThirukuralA2Z\Thirukural\9" />
+    <Content Include="ThirukuralA2Z\Thirukural\A" />
+    <Content Include="ThirukuralA2Z\Thirukural\K" />
+    <Content Include="ThirukuralA2Z\Thirukural\L" />
+    <Content Include="ThirukuralA2Z\Thirukural\M" />
+    <Content Include="ThirukuralA2Z\Thirukural\N" />
+    <Content Include="ThirukuralA2Z\Thirukural\B" />
+    <Content Include="ThirukuralA2Z\Thirukural\C" />
+    <Content Include="ThirukuralA2Z\Thirukural\D" />
+    <Content Include="ThirukuralA2Z\Thirukural\F" />
+    <Content Include="ThirukuralA2Z\Thirukural\G" />
+    <Content Include="ThirukuralA2Z\Thirukural\H" />
+    <Content Include="ThirukuralA2Z\Thirukural\I" />
+    <Content Include="ThirukuralA2Z\Thirukural\J" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

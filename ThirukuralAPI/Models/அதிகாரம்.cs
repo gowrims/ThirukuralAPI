@@ -8,7 +8,7 @@ using System.Web;
 
 namespace ThirukuralAPI.Models
 {
-    public class அதிகாரம்
+    public class அதிகார_தோகுப்பு
     {
         public static HttpResponseMessage அதிகாரங்கள்()
         {

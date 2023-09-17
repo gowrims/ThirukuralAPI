@@ -9,17 +9,17 @@ namespace ThirukuralAPI.Controllers
     {
         public HttpResponseMessage GetIyal()
         {
-            return இயல்.இயல்கள்();
+            return இயல்_தோகுப்பு.இயல்கள்();
         }
 
         public HttpResponseMessage GetAthikaram()
         {
-            return அதிகாரம்.அதிகாரங்கள்();
+            return அதிகார_தோகுப்பு.அதிகாரங்கள்();
         }
 
-        public HttpResponseMessage GetAthikaram()
+        public HttpResponseMessage GetThirukural()
         {
-            return அதிகாரம்.அதிகாரங்கள்();
+            return திருக்குறள்.திருக்குறள்கள்();
         }
 
         public void Post([FromBody] string value)

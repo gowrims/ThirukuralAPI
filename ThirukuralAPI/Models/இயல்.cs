@@ -9,16 +9,15 @@ using System.Text;
 
 namespace ThirukuralAPI.Models
 {
-    public class இயல்
+    public class இயல்_தோகுப்பு
     {
         public static HttpResponseMessage இயல்கள்()
         {
             HttpResponseMessage message = new HttpResponseMessage();
-            string[] Iyal = new string[13];
             try
             {
                 string FilePath = @"C:\Users\Gowrishankar\source\repos\ThirukuralAPI\ThirukuralAPI\ThirukuralA2Z\Iyal.txt";
-                Iyal = File.ReadAllLines(FilePath);
+                string[] Iyal = File.ReadAllLines(FilePath);
                 message.StatusCode = System.Net.HttpStatusCode.OK;
                 message.Content = new StringContent("{\n\t\"இயல்கள்\":" + JsonConvert.SerializeObject(Iyal.ToList()) + "\n}", System.Text.Encoding.UTF8, "application/json");
                 return message;
