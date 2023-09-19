@@ -10,6 +10,15 @@ namespace ThirukuralAPI.Models
 {
     public class அதிகார_தோகுப்பு
     {
+        public string அதிகாரம் { get; set; }
+        public List<List<குறள்கள்>> குறள்கள் { get; set; }
+
+        public அதிகார_தோகுப்பு(string அதிகாரம், List<List<குறள்கள்>> குறள்கள்)
+        {
+            this.அதிகாரம் = அதிகாரம்;
+            this.குறள்கள் = குறள்கள்;
+        }
+
         public static HttpResponseMessage அதிகாரங்கள்()
         {
             HttpResponseMessage response = new HttpResponseMessage();
