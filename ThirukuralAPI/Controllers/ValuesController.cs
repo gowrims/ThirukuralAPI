@@ -38,7 +38,7 @@ namespace ThirukuralAPI.Controllers
                 message = new HttpResponseMessage
                 {
                     StatusCode = HttpStatusCode.OK,
-                    Content = new StringContent("{" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8,"application/json")
+                    Content = new StringContent("{ \n\t \"அதிகாரம்\" : \""+search.அதிகாரம்+"\"\t\t" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8,"application/json")
                 };
             }
             catch (Exception ex)
