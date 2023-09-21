@@ -58,7 +58,12 @@ namespace ThirukuralAPI.Controllers
                 }
                 else if(search.குறள்_எண் != string.Empty)
                 {
-
+                    இயல்_தோகுப்பு lists = இயல்_தோகுப்பு.Getஇயல்(input: search.இயல்);
+                    message = new HttpResponseMessage
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
+                    };
                 }
             }
             catch (Exception ex)

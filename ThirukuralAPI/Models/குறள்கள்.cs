@@ -20,5 +20,10 @@ namespace ThirukuralAPI.Models
             குறள் = Line;
             குறள்_விளக்கம் = Explian;
         }
+
+        public static குறள்கள் Getகுறள்கள்(int KuralNumber)
+        {
+
+        }
     }
 }
