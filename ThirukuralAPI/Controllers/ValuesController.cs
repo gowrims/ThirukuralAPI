@@ -11,22 +11,26 @@ namespace ThirukuralAPI.Controllers
 {
     public class ValuesController : ApiController
     {
+        [HttpGet]
         public HttpResponseMessage GetIyal()
         {
             return இயல்_தோகுப்பு.இயல்கள்();
         }
 
+        [HttpGet]
         public HttpResponseMessage GetAthikaram()
         {
             return அதிகார_தோகுப்பு.அதிகாரங்கள்();
         }
 
+        [HttpGet]
         public HttpResponseMessage GetThirukuralAll()
         {
             return திருக்குறள்.திருக்குறள்கள்();
         }
 
-        public HttpResponseMessage GetThirukural(dynamic dynamicinput)
+        [HttpPost]
+        public HttpResponseMessage Search(dynamic dynamicinput)
         {
             HttpResponseMessage message = new HttpResponseMessage();
 
@@ -50,12 +54,5 @@ namespace ThirukuralAPI.Controllers
             return message;
         }
 
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        public void Delete(int id)
-        {
-        }
     }
 }
