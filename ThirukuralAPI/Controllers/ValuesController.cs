@@ -37,13 +37,29 @@ namespace ThirukuralAPI.Controllers
             try
             {
                 var JsonString = JsonConvert.SerializeObject(dynamicinput);
-                var search = JsonConvert.DeserializeObject<Search>(JsonString);
-                var lists = திருக்குறள்.Getஅதிகாரகுறள்(search.அதிகாரம்);
-                message = new HttpResponseMessage
+                Search search = JsonConvert.DeserializeObject<Search>(JsonString);
+                if (search.அதிகாரம் != null)
                 {
-                    StatusCode = HttpStatusCode.OK,
-                    Content = new StringContent("{ \n\t \"அதிகாரம்\" : \""+search.அதிகாரம்+"\"\t\t" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8,"application/json")
-                };
+                    var lists = திருக்குறள்.Getஅதிகாரகுறள்(search.அதிகாரம்);
+                    message = new HttpResponseMessage
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        Content = new StringContent("{ \n\t \"அதிகாரம்\" : \"" + search.அதிகாரம் + "\"\t\t" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8, "application/json")
+                    };
+                }
+                else if(search.இயல் != string.Empty)
+                {
+                    இயல்_தோகுப்பு lists = இயல்_தோகுப்பு.Getஇயல்(input: search.இயல்);
+                    message = new HttpResponseMessage
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
+                    };
+                }
+                else if(search.குறள்_எண் != string.Empty)
+                {
+
+                }
             }
             catch (Exception ex)
             {
