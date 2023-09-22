@@ -47,7 +47,7 @@ namespace ThirukuralAPI.Controllers
                         Content = new StringContent("{ \n\t \"அதிகாரம்\" : \"" + search.அதிகாரம் + "\"\t\t" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8, "application/json")
                     };
                 }
-                else if(search.இயல் != string.Empty)
+                else if(search.இயல் != null)
                 {
                     இயல்_தோகுப்பு lists = இயல்_தோகுப்பு.Getஇயல்(input: search.இயல்);
                     message = new HttpResponseMessage
@@ -56,9 +56,9 @@ namespace ThirukuralAPI.Controllers
                         Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
                     };
                 }
-                else if(search.குறள்_எண் != string.Empty)
+                else if(search.குறள்_எண் != null)
                 {
-                    இயல்_தோகுப்பு lists = இயல்_தோகுப்பு.Getஇயல்(input: search.இயல்);
+                    குறள்கள் lists = குறள்கள்.Getகுறள்கள்(int.Parse(search.குறள்_எண்));
                     message = new HttpResponseMessage
                     {
                         StatusCode = HttpStatusCode.OK,
