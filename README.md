@@ -17,18 +17,22 @@ Method : GET,
 Respone Body : Call the api in browser you get the response.
 
 ## The third API is 
-API : "https://localhost:44301/api/Values/GetThirukuralAll",
-Method : GET,
-Respone Body :
-Respone Body : Call the api in browser you get the response.
+API 
+    : "https://gowrishankar.bsite.net/api/Values/GetThirukuralAll",
+Method 
+    : GET,
+Respone Body 
+    : Call the api in browser you get the response.
 
 ## The forth API is
-API : "https://localhost:44301/api/Values/Search",
+API : "https://gowrishankar.bsite.net/api/Values/Search",
 Method : POST,
 Request Body :
+---
 {
     //"அதிகாரம்":"வான்சிறப்பு"
     //"இயல்":"பாயிரவியல்"
     "குறள் எண்":"130"
 }
+---
 Respone Body : Call the api in browser you get the response.
