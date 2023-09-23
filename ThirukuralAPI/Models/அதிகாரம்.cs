@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
+using System.Web.Hosting;
 
 namespace ThirukuralAPI.Models
 {
@@ -24,7 +25,7 @@ namespace ThirukuralAPI.Models
             HttpResponseMessage response = new HttpResponseMessage();
             try
             {
-                string[] fileContent = File.ReadAllLines(@"C:\Users\Gowrishankar\source\repos\ThirukuralAPI\ThirukuralAPI\ThirukuralA2Z\chapters.txt");           
+                string[] fileContent = File.ReadAllLines(HostingEnvironment.MapPath("~/ThirukuralA2Z\\chapters.txt"));           
                 response. StatusCode = System.Net.HttpStatusCode.OK;
                 response.Content = new StringContent("{\n\t\"அதிகாரங்கள்\":" + JsonConvert.SerializeObject(fileContent.ToList()) + "\n}", System.Text.Encoding.UTF8, "application/json");
             }

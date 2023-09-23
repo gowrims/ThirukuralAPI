@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
+using System.Web.Hosting;
 
 namespace ThirukuralAPI.Models
 {
@@ -17,7 +18,7 @@ namespace ThirukuralAPI.Models
         [JsonProperty("குறள் விளக்கம்")]
         public string குறள்_விளக்கம் { get; set; }
 
-        private static readonly string FolderPath = "C:\\Users\\Gowrishankar\\source\\repos\\ThirukuralAPI\\ThirukuralAPI\\ThirukuralA2Z\\Thirukural";
+        private static readonly string FolderPath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\Thirukural");
 
         public குறள்கள்(string Number, string Line, string Explian)
         {

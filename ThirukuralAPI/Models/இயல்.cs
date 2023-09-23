@@ -6,14 +6,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Text;
+using System.Web.Hosting;
 
 namespace ThirukuralAPI.Models
 {
     public class இயல்_தோகுப்பு
     {
-        private readonly static string _iyalFilePath = @"C:\Users\Gowrishankar\source\repos\ThirukuralAPI\ThirukuralAPI\ThirukuralA2Z\Iyal.txt";
+        private readonly static string _iyalFilePath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\Iyal.txt");
         readonly static string[] Iyal = File.ReadAllLines(_iyalFilePath);
-        private readonly static string _athikaramFilePath = @"C:\Users\Gowrishankar\source\repos\ThirukuralAPI\ThirukuralAPI\ThirukuralA2Z\chapters.txt";
+        private readonly static string _athikaramFilePath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\chapters.txt");
         readonly static string[] FileChapter = File.ReadAllLines(_athikaramFilePath);
 
         public string இயல் { get; set; }

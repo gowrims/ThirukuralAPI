@@ -6,13 +6,15 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Web;
+using System.Web.Hosting;
 
 namespace ThirukuralAPI.Models
 {
     public class திருக்குறள்
     {
-        private static readonly string FolderPath = @"C:\\Users\\Gowrishankar\\source\\repos\\ThirukuralAPI\\ThirukuralAPI\\ThirukuralA2Z\\Thirukural";
-        private static readonly string FilePath = @"C:\Users\Gowrishankar\source\repos\ThirukuralAPI\ThirukuralAPI\ThirukuralA2Z\chapters.txt";
+        //private static readonly string FolderPath = @"C:\\Users\\Gowrishankar\\source\\repos\\ThirukuralAPI\\ThirukuralAPI\\ThirukuralA2Z\\Thirukural";
+        private static readonly string FolderPath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\Thirukural");
+        private static readonly string FilePath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\chapters.txt");
 
         public static HttpResponseMessage திருக்குறள்கள்()
         {
@@ -22,7 +24,6 @@ namespace ThirukuralAPI.Models
                 message.StatusCode = System.Net.HttpStatusCode.OK;
                 List<List<குறள்கள்>> list = new List<List<குறள்கள்>>();
                 List<குறள்கள்> குறள்வரிசை = new List<குறள்கள்>();
-                List<List<List<குறள்கள்>>> அதிகாரவரிசை = new List<List<List<குறள்கள்>>>();
                 var FilePaths = Directory.GetFiles(FolderPath);
                 var FileName = FilePaths.Select(s => Path.GetFileName(s)).ToList();
                 var AthikaramList = File.ReadAllLines(FilePath);
@@ -46,7 +47,7 @@ namespace ThirukuralAPI.Models
                     list.Add(குறள்வரிசை.GetRange(i,10));
                 }
 
-                message.Content = new StringContent("{" + JsonConvert.SerializeObject(list) + "\n}", System.Text.Encoding.UTF8, "application/json");
+                message.Content = new StringContent("{" + JsonConvert.SerializeObject(குறள்வரிசை) + "\n}", System.Text.Encoding.UTF8, "application/json");
                 return message;
             }
             catch(Exception ex)
