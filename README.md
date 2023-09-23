@@ -9,30 +9,25 @@ Thirukural have 13 chaptergroups(இயல்) and 133 chapters(அதிகா�
 ## The First API is 
 API : "https://gowrishankar.bsite.net/api/Values/GetIyal",
 Method : GET,
-Respone Body : Call the api in browser you get the response.
 
 ## The Second API is
 API : "https://gowrishankar.bsite.net/api/Values/GetAthikaram",
 Method : GET,
-Respone Body : Call the api in browser you get the response.
 
 ## The third API is 
 API 
     : "https://gowrishankar.bsite.net/api/Values/GetThirukuralAll",
 Method 
-    : GET,
-Respone Body 
-    : Call the api in browser you get the response.
+    : GET
 
 ## The forth API is
 API : "https://gowrishankar.bsite.net/api/Values/Search",
 Method : POST,
 Request Body :
----
+```
 {
     //"அதிகாரம்":"வான்சிறப்பு"
     //"இயல்":"பாயிரவியல்"
     "குறள் எண்":"130"
 }
----
-Respone Body : Call the api in browser you get the response.
+```
