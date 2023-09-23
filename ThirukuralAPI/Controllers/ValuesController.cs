@@ -59,11 +59,23 @@ namespace ThirukuralAPI.Controllers
                 else if(search.குறள்_எண் != null)
                 {
                     குறள்கள் lists = குறள்கள்.Getகுறள்கள்(int.Parse(search.குறள்_எண்));
-                    message = new HttpResponseMessage
+                    if (lists == null)
                     {
-                        StatusCode = HttpStatusCode.OK,
-                        Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
-                    };
+                        string Text = "{\"தற்பொழுது நீங்கள் தேடும் குறள் எண் '"+ search.குறள்_எண் +"' விரைவில் வழங்கப்படும்.\"}";
+                        message = new HttpResponseMessage
+                        {
+                            StatusCode = HttpStatusCode.NoContent,
+                            Content = new StringContent(Text, Encoding.UTF8, "application/json")
+                        };
+                    }
+                    else
+                    {
+                        message = new HttpResponseMessage
+                        {
+                            StatusCode = HttpStatusCode.OK,
+                            Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
+                        };
+                    }
                 }
             }
             catch (Exception ex)

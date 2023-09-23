@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Ajax.Utilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,19 +28,26 @@ namespace ThirukuralAPI.Models
 
         public static குறள்கள் Getகுறள்கள்(int KuralNumber)
         {
-            int number = (int)Math.Round((double)KuralNumber / 10) * 10;
             var Files = Directory.GetFiles(FolderPath);
             குறள்கள் kural = new குறள்கள்(string.Empty,string.Empty,string.Empty);
-            string[] thirukural = File.ReadAllLines(Files[number]);
             int count = 0;
-            for (int j = 0; j < thirukural.Length; j += 5)
+            for (int i = 0;i < Files.Count(); i++)
             {
-                if (count == number)
+                string[] thirukural = File.ReadAllLines(Files[i]);
+                for (int j = 0; j < thirukural.Length; j += 5)
                 {
-                    kural = new குறள்கள்(thirukural[j].Split(' ')[1], $"{thirukural[j + 1]} {thirukural[j + 2]}", thirukural[j + 4]);
-                    break;
+                    count++;
+                    if (count == KuralNumber)
+                    {
+                        kural = new குறள்கள்(thirukural[j].Split(' ')[1], $"{thirukural[j + 1]} {thirukural[j + 2]}", thirukural[j + 4]);
+                        break;
+                    }
                 }
-                count++;
+                if (count == KuralNumber) { break; };
+            }
+            if(count < KuralNumber)
+            {
+                kural = null;
             }
             return kural;
         }
