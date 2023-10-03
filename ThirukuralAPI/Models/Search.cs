@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.SqlServer.Server;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace ThirukuralAPI.Models
         public string இயல் { get; set; }
         [JsonProperty("குறள் எண்")]
         public string குறள்_எண் {  get; set; }
+        public string உள்ளீடு { get; set; }
     }
 }

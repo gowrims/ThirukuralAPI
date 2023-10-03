@@ -47,7 +47,7 @@ namespace ThirukuralAPI.Controllers
                         Content = new StringContent("{ \n\t \"அதிகாரம்\" : \"" + search.அதிகாரம் + "\"\t\t" + JsonConvert.SerializeObject(lists) + "\n}", Encoding.UTF8, "application/json")
                     };
                 }
-                else if(search.இயல் != null)
+                else if (search.இயல் != null)
                 {
                     இயல்_தோகுப்பு lists = இயல்_தோகுப்பு.Getஇயல்(input: search.இயல்);
                     message = new HttpResponseMessage
@@ -56,12 +56,33 @@ namespace ThirukuralAPI.Controllers
                         Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
                     };
                 }
-                else if(search.குறள்_எண் != null)
+                else if (search.குறள்_எண் != null)
                 {
                     குறள்கள் lists = குறள்கள்.Getகுறள்கள்(int.Parse(search.குறள்_எண்));
                     if (lists == null)
                     {
-                        string Text = "{\"தற்பொழுது நீங்கள் தேடும் குறள் எண் '"+ search.குறள்_எண் +"' விரைவில் வழங்கப்படும்.\"}";
+                        string Text = "{\"குறிப்பு\":\"தற்பொழுது நீங்கள் தேடும் குறள் எண் '" + search.குறள்_எண் + "' தற்சமயம் எங்களிடம் இல்லை விரைவில் வழங்கப்படும்.\"}";
+                        message = new HttpResponseMessage
+                        {
+                            StatusCode = HttpStatusCode.NoContent,
+                            Content = new StringContent(Text, Encoding.UTF8, "application/json")
+                        };
+                    }
+                    else
+                    {
+                        message = new HttpResponseMessage
+                        {
+                            StatusCode = HttpStatusCode.OK,
+                            Content = new StringContent($"{JsonConvert.SerializeObject(lists)}", Encoding.UTF8, "application/json")
+                        };
+                    }
+                }
+                else if (search.உள்ளீடு != null)
+                {
+                    var lists = குறள்கள்.வெளியீட்டுகுறள்(search.உள்ளீடு);
+                    if (lists == null)
+                    {
+                        string Text = "{\"குறிப்பு\":\"தற்பொழுது நீங்கள் தேடும் குறள் எண் '" + search.குறள்_எண் + "' தற்சமயம் எங்களிடம் இல்லை விரைவில் வழங்கப்படும்.\"}";
                         message = new HttpResponseMessage
                         {
                             StatusCode = HttpStatusCode.NoContent,

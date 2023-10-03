@@ -2,11 +2,14 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Web;
 using System.Web.Hosting;
+using System.Xml;
 
 namespace ThirukuralAPI.Models
 {
@@ -52,5 +55,27 @@ namespace ThirukuralAPI.Models
             }
             return kural;
         }
+
+        public static List<குறள்கள்> வெளியீட்டுகுறள்(string input)
+        {
+            var Files = Directory.GetFiles(FolderPath);
+            List<குறள்கள்> list = new List<குறள்கள்>();
+            int count = 0;
+            for (int i = 0; i < Files.Count(); i++)
+            {
+                string[] thirukural = File.ReadAllLines(Files[i]);
+                for (int j = 0; j < thirukural.Length; j += 5)
+                {
+                    count++;
+                    if (thirukural[j + 1].Contains(input) || thirukural[j + 2].Contains(input))
+                    {
+                        list.Add(new குறள்கள்(thirukural[j].Split(' ')[1], $"{thirukural[j + 1]} {thirukural[j + 2]}", thirukural[j + 4]));
+                    }
+                }
+            }
+            return list;
+        }
+
+        
     }
 }
