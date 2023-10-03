@@ -24,7 +24,7 @@ namespace ThirukuralAPI.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetThirukuralAll()
+        public HttpResponseMessage GetThirukural()
         {
             return திருக்குறள்.திருக்குறள்கள்();
         }
