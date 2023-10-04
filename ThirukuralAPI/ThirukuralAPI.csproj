@@ -233,6 +233,8 @@
     <Content Include="ThirukuralA2Z\Thirukural\H" />
     <Content Include="ThirukuralA2Z\Thirukural\I" />
     <Content Include="ThirukuralA2Z\Thirukural\J" />
+    <Content Include="ThirukuralA2Z\Thirukural\O" />
+    <Content Include="ThirukuralA2Z\Thirukural\P" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
