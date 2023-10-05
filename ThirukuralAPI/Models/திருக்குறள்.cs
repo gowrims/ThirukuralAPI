@@ -22,7 +22,6 @@ namespace ThirukuralAPI.Models
             try
             {
                 message.StatusCode = System.Net.HttpStatusCode.OK;
-                List<List<குறள்கள்>> list = new List<List<குறள்கள்>>();
                 List<குறள்கள்> குறள்வரிசை = new List<குறள்கள்>();
                 var FilePaths = Directory.GetFiles(FolderPath);
                 var FileName = FilePaths.Select(s => Path.GetFileName(s)).ToList();
@@ -38,16 +37,7 @@ namespace ThirukuralAPI.Models
                     }
                 }
 
-                for (int i = 0; ; i+=10)
-                {
-                    if(i == குறள்வரிசை.Count)
-                    {
-                        break;
-                    }
-                    list.Add(குறள்வரிசை.GetRange(i,10));
-                }
-
-                message.Content = new StringContent("{" + JsonConvert.SerializeObject(குறள்வரிசை) + "\n}", System.Text.Encoding.UTF8, "application/json");
+                message.Content = new StringContent($"{JsonConvert.SerializeObject(குறள்வரிசை)}", System.Text.Encoding.UTF8, "application/json");
                 return message;
             }
             catch(Exception ex)
