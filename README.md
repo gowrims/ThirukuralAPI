@@ -16,7 +16,7 @@ Method : GET,
 
 ## The third API is 
 API 
-    : "https://gowrishankar.bsite.net/api/Values/GetThirukuralAll",
+    : "https://gowrishankar.bsite.net/api/Values/GetThirukural",
 Method 
     : GET
 
