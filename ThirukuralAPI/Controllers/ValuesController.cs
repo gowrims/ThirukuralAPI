@@ -29,6 +29,16 @@ namespace ThirukuralAPI.Controllers
             return திருக்குறள்.திருக்குறள்கள்();
         }
 
+        [HttpGet]
+        public HttpResponseMessage GetPoruladakamadakam() 
+        {
+            HttpResponseMessage message = new HttpResponseMessage();
+
+
+
+            return message;
+        }
+
         [HttpPost]
         public HttpResponseMessage Search(dynamic dynamicinput)
         {
