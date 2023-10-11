@@ -165,6 +165,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EnumIyal.cs" />
     <Compile Include="Models\IyalEnum.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\அதிகாரம்.cs" />
