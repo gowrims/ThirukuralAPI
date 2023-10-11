@@ -6,12 +6,44 @@ using System.Threading.Tasks;
 
 namespace ThirukuralAPI.Models
 {
-    public class Porulatakkam
+    public static class Porulatakkam
     {
-        public string அறத்துப்பால் { get; set; }
-        public string பொருட்பால் { get; set; }
-        public string காமத்துப்பால் { get; set; }
+        public static List<Dictionary<string, int>> GetPorulatakkam()
+        {
+            List<Dictionary<string, int>> keyValuePairs = new List<Dictionary<string, int>>();
+            Dictionary<string, int> FirstSection = new Dictionary<string, int>();
+            Dictionary<string, int> SecondSection = new Dictionary<string, int>();
+            Dictionary<string, int> ThirdSection = new Dictionary<string, int>();
 
-        
+            int[] values = (int[])Enum.GetValues(typeof(EnumIyal));
+            string[] keys = Enum.GetNames(typeof(EnumIyal));
+
+            for(int i = 0; i < 4; i++) 
+            {
+                string key = keys[i];
+                int value = values[i];
+                FirstSection.Add(key,value);
+            }
+
+            for(int i = 5; i < 12;i++)
+            {
+                string key = keys[i];
+                int value = values[i];
+                SecondSection.Add(key,value);
+            }
+
+            for(int i = 11; i  < 13;i++)
+            {
+                string key = keys[i];
+                int value = values[i];
+                ThirdSection.Add(key,value);
+            }
+
+            keyValuePairs.Add(FirstSection);
+            keyValuePairs.Add(SecondSection);
+            keyValuePairs.Add(ThirdSection);
+
+            return keyValuePairs;
+        }
     }
 }

@@ -34,7 +34,17 @@ namespace ThirukuralAPI.Controllers
         {
             HttpResponseMessage message = new HttpResponseMessage();
 
-
+            try
+            {          
+                message.StatusCode = HttpStatusCode.OK;
+                message.Content = new StringContent(JsonConvert.SerializeObject(Porulatakkam.GetPorulatakkam()), Encoding.UTF8, "application/json");
+            }
+            catch(Exception ex)
+            {
+                string text = "{\"Message\":\"" + ex.Message.ToString() + "\"}";
+                message.StatusCode = HttpStatusCode.BadRequest;
+                message.Content = new StringContent(text, Encoding.UTF8, "application/json");
+            }
 
             return message;
         }
