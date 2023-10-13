@@ -166,7 +166,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EnumIyal.cs" />
-    <Compile Include="Models\IyalEnum.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\அதிகாரம்.cs" />
     <Compile Include="Models\இயல்.cs" />
@@ -250,6 +249,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
     <Content Include="ThirukuralA2Z\Thirukural\Q" />
+    <Content Include="ThirukuralA2Z\EnumIyal" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
