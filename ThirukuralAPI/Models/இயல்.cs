@@ -18,6 +18,7 @@ namespace ThirukuralAPI.Models
         readonly static string[] FileChapter = File.ReadAllLines(_athikaramFilePath);
 
         public string இயல் { get; set; }
+        
         public List<string> அதிகாரம் { get; set; }
 
         public இயல்_தோகுப்பு (string இயல், List<string> அதிகாரம்)

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Web.Hosting;
 
@@ -12,12 +9,12 @@ namespace ThirukuralAPI.Models
     {
         public static string FilePath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\EnumIyal");
 
-        public Dictionary<string, int> அறத்துப்பால் { get; set; }
-        public Dictionary<string, int> பொருட்பால் { get; set; }
-        public Dictionary<string, int> காமத்துப்பால் { get; set; }
+        public List<IyalDetails> அறத்துப்பால் { get; set; }
+        public List<IyalDetails> பொருட்பால் { get; set; }
+        public List<IyalDetails> காமத்துப்பால் { get; set; }
 
 
-        public Porulatakkam(Dictionary<string, int> அறத்துப்பால், Dictionary<string, int> பொருட்பால், Dictionary<string, int> காமத்துப்பால்)
+        public Porulatakkam(List<IyalDetails> அறத்துப்பால், List<IyalDetails> பொருட்பால், List<IyalDetails> காமத்துப்பால்)
         {
             this.அறத்துப்பால் = அறத்துப்பால்;
             this.பொருட்பால் = பொருட்பால்;
@@ -26,10 +23,9 @@ namespace ThirukuralAPI.Models
 
         public static Porulatakkam GetPorulatakkam()
         {
-            List<Dictionary<string, int>> keyValuePairs = new List<Dictionary<string, int>>();
-            Dictionary<string, int> FirstSection = new Dictionary<string, int>();
-            Dictionary<string, int> SecondSection = new Dictionary<string, int>();
-            Dictionary<string, int> ThirdSection = new Dictionary<string, int>();
+            List<IyalDetails> FirstSection = new List<IyalDetails>();
+            List<IyalDetails> SecondSection = new List<IyalDetails>();
+            List<IyalDetails> ThirdSection = new List<IyalDetails>();
 
             string[] EnumIyal = File.ReadAllLines(FilePath);
 
@@ -38,7 +34,7 @@ namespace ThirukuralAPI.Models
                 string[] keys = EnumIyal[i].Split('=');
                 string key = keys[0];
                 int value = Convert.ToInt32(keys[1]);
-                FirstSection.Add(key,value);
+                FirstSection.Add(new IyalDetails(key,value,value * 10));
             }
 
             for(int i = 5; i < 12;i++)
@@ -46,7 +42,7 @@ namespace ThirukuralAPI.Models
                 string[] keys = EnumIyal[i].Split('=');
                 string key = keys[0];
                 int value = Convert.ToInt32(keys[1]);
-                SecondSection.Add(key,value);
+                SecondSection.Add(new IyalDetails(key, value, value * 10));
             }
 
             for(int i = 11; i  < 13;i++)
@@ -54,7 +50,7 @@ namespace ThirukuralAPI.Models
                 string[] keys = EnumIyal[i].Split('=');
                 string key = keys[0];
                 int value = Convert.ToInt32(keys[1]);
-                ThirdSection.Add(key,value);
+                ThirdSection.Add(new IyalDetails(key, value, value * 10));
             }
 
             Porulatakkam porulatakkam = new Porulatakkam(FirstSection, SecondSection, ThirdSection);

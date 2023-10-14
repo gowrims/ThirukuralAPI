@@ -166,6 +166,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EnumIyal.cs" />
+    <Compile Include="Models\IyalDetails.cs" />
     <Compile Include="Models\Search.cs" />
     <Compile Include="Models\அதிகாரம்.cs" />
     <Compile Include="Models\இயல்.cs" />
