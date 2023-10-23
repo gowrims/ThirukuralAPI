@@ -8,7 +8,6 @@ namespace ThirukuralAPI.Models
     public class Porulatakkam
     {
         public static string FilePath = HostingEnvironment.MapPath("~/ThirukuralA2Z\\EnumIyal");
-
         public List<IyalDetails> அறத்துப்பால் { get; set; }
         public List<IyalDetails> பொருட்பால் { get; set; }
         public List<IyalDetails> காமத்துப்பால் { get; set; }
@@ -26,7 +25,6 @@ namespace ThirukuralAPI.Models
             List<IyalDetails> FirstSection = new List<IyalDetails>();
             List<IyalDetails> SecondSection = new List<IyalDetails>();
             List<IyalDetails> ThirdSection = new List<IyalDetails>();
-
             string[] EnumIyal = File.ReadAllLines(FilePath);
 
             for (int i = 0; i < 4; i++)
@@ -34,7 +32,7 @@ namespace ThirukuralAPI.Models
                 string[] keys = EnumIyal[i].Split('=');
                 string key = keys[0];
                 int value = Convert.ToInt32(keys[1]);
-                FirstSection.Add(new IyalDetails(key,value,value * 10));
+                FirstSection.Add(new IyalDetails(key,value, value * 10));
             }
 
             for(int i = 5; i < 12;i++)

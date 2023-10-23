@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -7,7 +8,6 @@ namespace ThirukuralAPI.Models
     public class IyalDetails
     {
         public string இயல் { get; set; }
-
         [JsonProperty("அதிகார எண்ணிக்கை")]
         public int அதிகார_எண்ணிக்கை { get; set; }
         [JsonProperty("குறள் எண்ணிக்கை")]
