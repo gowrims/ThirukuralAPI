@@ -41,3 +41,10 @@ Request Body :
     "உள்ளீடு":"தார்"
 }
 ```
+## The fifth API is
+```
+API : https://gowrishankar.bsite.net/api/Values/GetPoruladakamadakam
+Method : POST
+```
+
+
