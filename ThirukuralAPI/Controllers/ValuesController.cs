@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 using ThirukuralAPI.Models;
-using System.Text;
-using Newtonsoft.Json;
 
 namespace ThirukuralAPI.Controllers
 {
@@ -30,16 +29,16 @@ namespace ThirukuralAPI.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetPoruladakamadakam() 
+        public HttpResponseMessage GetPoruladakamadakam()
         {
             HttpResponseMessage message = new HttpResponseMessage();
 
             try
-            {          
+            {
                 message.StatusCode = HttpStatusCode.OK;
                 message.Content = new StringContent(JsonConvert.SerializeObject(Porulatakkam.GetPorulatakkam()), Encoding.UTF8, "application/json");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 string text = "{\"Message\":\"" + ex.Message.ToString() + "\"}";
                 message.StatusCode = HttpStatusCode.BadRequest;
@@ -122,7 +121,7 @@ namespace ThirukuralAPI.Controllers
             catch (Exception ex)
             {
                 message.StatusCode = System.Net.HttpStatusCode.BadRequest;
-                message.Content = new StringContent(ex.Message,Encoding.UTF8,"application/json");
+                message.Content = new StringContent(ex.Message, Encoding.UTF8, "application/json");
             }
 
             return message;
